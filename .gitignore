@@ -8,8 +8,7 @@ __pycache__/
 venv/
 
 # build outputs
-src/import_dialog.py
-*.ankiaddon
+build/
 *.pyc
 *.un~
 .coverage

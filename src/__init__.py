@@ -29,7 +29,7 @@ if 'pytest' not in sys.modules:
                 "وجاوب بنعم على النافذة التي ستظهر.")
             return
         dialog = LPCGDialog(aqt.mw)
-        dialog.exec_()
+        dialog.exec()
 
     if aqt.mw is not None:
         action = QAction(aqt.mw)

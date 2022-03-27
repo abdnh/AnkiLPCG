@@ -1,6 +1,1 @@
-{
-    "name": "مستورد المنظومات والقصائد",
-    "package": "1642554134",
-    "ankiweb_id": "1642554134",
-    "homepage": "https://github.com/abdnh/AnkiLPCG"
-}
+{"name": "مستورد المنظومات والقصائد", "package": "arlpcg", "conflicts": ["1642554134"]}

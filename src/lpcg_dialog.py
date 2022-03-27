@@ -9,7 +9,11 @@ from aqt.utils import getFile, showWarning, askUser, tooltip
 from anki.notes import Note
 
 
-from . import import_dialog as lpcg_form
+if aqt.qtmajor > 5:
+    from . import import_dialog_qt6 as lpcg_form
+else:
+    from . import import_dialog_qt5 as lpcg_form
+
 from .gen_notes import MediaImportMode, add_notes, cleanse_text, ImportMode
 from . import models
 
@@ -39,10 +43,10 @@ class LPCGDialog(QDialog):
         self.form.automaticCheckBox.toggled.connect(self.onAutomatic)
         self.form.bySectionCheckBox.toggled.connect(self.onBySection)
 
-        self.setLayoutDirection(Qt.RightToLeft)
+        self.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
         opt = QTextOption()
-        opt.setTextDirection(Qt.RightToLeft)
-        opt.setAlignment(Qt.AlignRight)
+        opt.setTextDirection(Qt.LayoutDirection.RightToLeft)
+        opt.setAlignment(Qt.AlignmentFlag.AlignRight)
         self.form.textBox.document().setDefaultTextOption(opt)
 
         self.media = []
