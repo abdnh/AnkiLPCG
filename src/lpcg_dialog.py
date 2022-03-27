@@ -2,14 +2,9 @@ import codecs
 import urllib
 import html
 
-# pylint: disable=no-name-in-module
-from PyQt5.QtWidgets import QDialog
-from PyQt5.QtGui import QDesktopServices, QTextOption
-from PyQt5.QtCore import QUrl, Qt
-
 import aqt
 import aqt.editor
-from aqt.qt import QAction  # type: ignore
+from aqt.qt import *  # type: ignore
 from aqt.utils import getFile, showWarning, askUser, tooltip
 from anki.notes import Note
 
