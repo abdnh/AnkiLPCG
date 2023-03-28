@@ -42,6 +42,7 @@ class LPCGDialog(QDialog):
         self.form.helpButton.clicked.connect(self.onHelp)
         self.form.automaticCheckBox.toggled.connect(self.onAutomatic)
         self.form.bySectionCheckBox.toggled.connect(self.onBySection)
+        self.finished.connect(self.on_finished)
 
         self.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
         opt = QTextOption()
@@ -51,6 +52,9 @@ class LPCGDialog(QDialog):
 
         self.media = []
         self.form.mediaButton.clicked.connect(self.onMedia)
+
+    def on_finished(self) -> None:
+        self.deckChooser.cleanup()
 
     def accept(self):
         "On close, create notes from the contents of the poem editor."
